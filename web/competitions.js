@@ -2,10 +2,13 @@ const puppeteer = require('puppeteer')
 const global = require('./global')
 const link = global.link
 async function getCurrentCompetition() {
-    const browser = await puppeteer.launch({
-        headless:false,
-        args: ["--no-sandbox"]
-    })
+    const browser = await puppeteerExtra.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+      ignoreHTTPSErrors: true,
+    });
     const page = await browser.newPage()
 
     await page.goto(`${link}/clasificacion`)
@@ -53,10 +56,13 @@ async function getCurrentCompetition() {
 }
 
 async function getCompetitionByGroup(groupId){
-    const browser = await puppeteer.launch({
-      headless:false,
-      args: ["--no-sandbox"]
-    })
+  const browser = await puppeteerExtra.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
+  });
     const page = await browser.newPage()
 
     await page.goto(`${link}/clasificacion`)
