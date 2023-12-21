@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer')
 const global = require('./global')
 const link = global.link
 async function getCurrentCompetition() {
-    const browser = await puppeteerExtra.launch({
+    const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
       executablePath: await chromium.executablePath(),
@@ -56,7 +56,7 @@ async function getCurrentCompetition() {
 }
 
 async function getCompetitionByGroup(groupId){
-  const browser = await puppeteerExtra.launch({
+  const browser = await puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath(),
