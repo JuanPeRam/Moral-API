@@ -3,7 +3,8 @@ const global = require('./global')
 const link = global.link
 async function getCurrentCompetition() {
     const browser = await puppeteer.launch({
-        headless: 'new'
+        headless:false,
+        args: ["--no-sandbox"]
     })
     const page = await browser.newPage()
 
@@ -53,7 +54,8 @@ async function getCurrentCompetition() {
 
 async function getCompetitionByGroup(groupId){
     const browser = await puppeteer.launch({
-        headless: 'new'
+      headless:false,
+      args: ["--no-sandbox"]
     })
     const page = await browser.newPage()
 
