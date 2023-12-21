@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "prestart": "apt-get update && apt-get install -y chromium-browser",
+    "prestart": "snap install chromium",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
