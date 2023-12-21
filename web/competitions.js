@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer')
 const global = require('./global')
+const chromium = require('@sparticuz/chromium')
 const link = global.link
 async function getCurrentCompetition() {
     const browser = await puppeteer.launch({
