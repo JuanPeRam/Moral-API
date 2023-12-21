@@ -4,6 +4,6 @@ const api = express.Router()
 
 api.get('/competitions',competitionsController.getCompetitions)
 api.get('/competition/:group',competitionsController.getCompetitionByGroup)
-api.get('',()=>{console.log("Hola")})
+api.get('',(req,res)=>{res.send("Funcionando!")})
 
 module.exports = api
