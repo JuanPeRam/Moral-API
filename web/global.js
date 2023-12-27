@@ -3,25 +3,19 @@ const pathToChromium = 'C:\\Program Files\\Chromium\\chrome.exe' // or await chr
 const chromium = require('@sparticuz/chromium')
 const puppeteer = require('puppeteer')
 
-async function newBrowser(){
-    /*const browser = await puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: pathToChromium,
-        headless: chromium.headless,
-        ignoreHTTPSErrors: true,
-      });*/
+async function newBrowser() {
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: pathToChromium,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
+  });
 
-      const browser = await puppeteer.launch({
-        
-        executablePath: pathToChromium,
-        headless: false
-      });
-
-      return browser
+  return browser
 }
 
 
 module.exports = {
-    link, newBrowser
+  link, newBrowser
 }
