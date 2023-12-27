@@ -1,15 +1,7 @@
-const puppeteer = require('puppeteer')
 const global = require('./global')
-const chromium = require('@sparticuz/chromium')
 const link = global.link
 async function getCurrentCompetition() {
-    const browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(),
-      headless: chromium.headless,
-      ignoreHTTPSErrors: true,
-    });
+    const browser = await global.newBrowser()
     const page = await browser.newPage()
 
     await page.goto(`${link}/clasificacion`)
@@ -57,13 +49,7 @@ async function getCurrentCompetition() {
 }
 
 async function getCompetitionByGroup(groupId){
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath(),
-    headless: chromium.headless,
-    ignoreHTTPSErrors: true,
-  });
+  const browser = await global.newBrowser()
     const page = await browser.newPage()
 
     await page.goto(`${link}/clasificacion`)

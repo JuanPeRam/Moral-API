@@ -12,7 +12,8 @@ app.use(express.urlencoded({extended: true}))
 
 //Cargar rutas
 const competitions_routes = require('./routes/competitions')
+const results_routes = require('./routes/results')
 // Rutas base
-app.use("/",competitions_routes/*,etc,etc,...*/)
+app.use("/",competitions_routes,results_routes/*,etc,etc,...*/)
 
 module.exports = app
