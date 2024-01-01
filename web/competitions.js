@@ -26,6 +26,7 @@ async function getCurrentCompetition() {
             const teamShield = teamData.querySelector('img').src
             const teamName = teamData.querySelector('h6 a').textContent
             const link = teamData.querySelector('h6 a').href
+            const teamID = link.split('/')[5]
             const points = cols[2].textContent;
             const played = cols[3].textContent;
             const won = cols[4].textContent;
@@ -35,7 +36,7 @@ async function getCurrentCompetition() {
             const goalsAgainst = cols[8].textContent;
             const gd = cols[9].textContent;
       
-            newStanding.push({ position,teamShield,teamName,link,points, played, won, drawn, lost, goals, goalsAgainst, gd });
+            newStanding.push({ teamID,position,teamShield,teamName,link,points, played, won, drawn, lost, goals, goalsAgainst, gd });
           }
       
           standingsInfo.push({ group, newStanding });
