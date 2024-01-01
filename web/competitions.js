@@ -54,7 +54,7 @@ async function getCompetitionByGroup(groupId){
     const page = await browser.newPage()
 
     await page.goto(`${link}/clasificacion`)
-    await page.waitForSelector('.card--has-table')
+    //await page.waitForSelector('.card--has-table')
     /*const ronda = await page.$('[data-id="GroupId"]')
     await ronda.click()
 
